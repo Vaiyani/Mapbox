@@ -1,0 +1,179 @@
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #checkboxes{
+        padding-left: 10%;
+        padding-right: 10%;
+        opacity: 0.1;
+        font-weight: 900;
+        transition-property: opacity;
+        transition-duration: 1s;
+      }
+      #checkboxes:hover{
+        opacity: 1
+      }
+      #filter-input{
+          font-family: Arial, sans-serif;
+          font-size: 15px;        
+      }
+
+      /*.pretty{
+        position: relative;
+        left: 100px;
+      }*/
+      .state{
+          color:#000000;
+          font-weight: 900;
+      }
+      #button{
+        z-index: 10;
+        right:0;
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: -1
+      }
+      
+      .map-overlay {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.8);
+        margin-right: 20px;
+        font-family: Arial, sans-serif;
+        overflow: auto;
+        border-radius: 3px;
+      }
+
+      #features {
+        top: 0;
+        height: 400px;
+        margin-top: 20px;
+        width: 300px;
+        display: none;
+      }
+
+
+      #legend {
+        padding: 10px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        line-height: 18px;
+        height: 120px;
+        margin-bottom: 40px;
+        width: 150px;
+        top: 2%;
+      }
+
+      #openNav{
+        top: 0;
+        left:0;
+      }
+
+      .legend-key {
+        display: inline-block;
+        border-radius: 20%;
+        width: 10px;
+        height: 10px;
+        margin-right: 5px;
+      }
+      .buttons {
+         margin-top: 70vh;
+         margin-left: 2%;
+      }
+
+      .fit {
+        display: inline;
+        margin: 0px 0px;
+        position: relative;
+        width: 32%;
+        height: 50px;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        font-size: 1.2em;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: 'Roboto',sans-serif ;
+        color: #fff;
+        background: #ee8a65;
+        cursor:pointer;
+      }
+    .filter-ctrl {
+        position: absolute;
+        top: 80vh;
+        width: 30vw;
+        left: 34vw;
+        z-index: 1;
+        
+    }
+
+    .filter-ctrl input[type=text] {
+        font: 1.3em/1.5em 'Roboto', sans-serif;
+        width: 100%;
+        border: 0;
+        background-color: #fff;
+        height: 40px;
+        margin: 0;
+        color: rgba(0,0,0,.5);
+        padding: 10px;
+        box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+        border-radius: 3px;
+    }
+
+
+@media only screen and (max-width: 850px) {
+    .fit {
+        font-size: 1em;
+    }
+
+     .filter-ctrl input[type=text] {
+        font: 1em/1.1em 'Roboto', sans-serif;
+        
+     }
+}
+
+@media only screen and (max-width: 500px) {
+    .fit {
+        font-size: 0.65em;
+    }
+     .filter-ctrl input[type=text] {
+        font: 0.6em/0.7em 'Roboto', sans-serif;
+
+
+     }
+
+
+      .map-overlay {
+        position: absolute;
+        top: 0;
+        margin-right:0px;
+
+      }
+}
+
+::-webkit-input-placeholder {
+   text-align: center;
+   text-transform: uppercase;
+
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+   text-transform: uppercase;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+   text-transform: uppercase;
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
+   text-transform: uppercase;
+  }
+
+
