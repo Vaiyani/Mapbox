@@ -21,8 +21,8 @@ def readCsv(new,keys):
 	# 			filename = input('File doesnt exists. Enter file name again: ')
 
 	filename = "info.csv"
-
 	df = pd.read_csv(filename)
+	# print(df.head())
 	Time = map(str,df.iloc[:,1].unique().tolist())
 
 	reader = csv.DictReader(open(filename))
@@ -30,11 +30,13 @@ def readCsv(new,keys):
 	i = 0
 	for row in reader:
 		if(i==0):
+			# print(row)
 			keys = list(row.keys())
 		i = i + 1	
 		new.setdefault(row[keys[0]],[])
 		new[row[keys[0]]].append(row)
-	
+
+	# print(new)
 	
 	for locId in new.keys():
 		temp = {}
@@ -42,13 +44,14 @@ def readCsv(new,keys):
 			temp.setdefault(new[locId][i][ keys[1] ],[])
 			temp[new[locId][i][ keys[1] ]].append(new[locId][i])
 		new[locId] = temp
+	
 	return [keys,Time]
 
 def automating(data, csv, keys, Time):
 	for i in range(len(data[0]["features"])):
 		for element in Time: 
 			Temp = dict((str(key),[]) for key in keys)
-			for AreaId in (data[0]["features"][i]["properties"]["Area_ID"]):				
+			for AreaId in (data[0]["features"][i]["properties"]["Area_ID"]):	
 				anyRowchecked = False
 				if(AreaId in csv):
 					if(element in csv[AreaId]):
@@ -75,6 +78,10 @@ loadTemplate(data)
 [keys,Time] = readCsv(new,keys)
 Time = list(Time)
 InsertProperties = keys[2:]
+
+# print(keys)
+# print(InsertProperties)
+
 automating(data,new,InsertProperties,Time)
 
 
