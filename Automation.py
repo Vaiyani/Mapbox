@@ -87,5 +87,3 @@ automating(data,new,InsertProperties,Time)
 
 with open('Mapbox/JSON/result.json', 'w') as fp:
     json.dump(data[0], fp, sort_keys=True, indent=4)
-
-##remove [] from result.json to validate on mapbox
